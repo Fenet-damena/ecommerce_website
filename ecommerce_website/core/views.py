@@ -1,3 +1,6 @@
 from django.shortcuts import render
 
-# Create your views here.
+def fontpage(request):
+    return  render(request,'core/fontpage.html')
+def about(requet):
+    return render(requet,'core/about.html')
