@@ -20,3 +20,9 @@ class product(models.Model):
     updated_at=models.DateTimeField(auto_now=True)
     def __str__(self):
         return self.title
+    def get_display_price(self):
+        return self.price /100
+    class Meta:
+        ordering=('-create_at',)
+
+    

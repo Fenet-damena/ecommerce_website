@@ -1,6 +1,11 @@
 from django.shortcuts import render
+from store.models import product
 
 def fontpage(request):
-    return  render(request,'core/fontpage.html')
-def about(requet):
-    return render(requet,'core/about.html')
+    products = product.objects.all()[:6]  
+    return render(request, 'core/fontpage.html', {
+        'products': products
+    })
+
+def about(request): 
+    return render(request, 'core/about.html')
