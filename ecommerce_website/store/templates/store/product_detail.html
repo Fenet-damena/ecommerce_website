@@ -1,7 +1,9 @@
 {% extends 'core/base.html' %}
-
-{% block title %}The product{% endblock %}
-
+{% block title %}{{ products.title }}{% endblock %}
 {% block content %}
-    vgwdbn
+    <h1 class="text-2xl">{{ products.title }}</h1>
+    <p class="text-xs text-gray-500">${{products.get_display_price}}</p>
+    {% if products.description %}
+         <p class="mt-4">{{products.description}}</p>
+    {% endif %}
 {% endblock %}
